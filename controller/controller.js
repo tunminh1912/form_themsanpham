@@ -1,6 +1,4 @@
 const Product = require('../Model/product');
-// const fs = require('fs');
-// const path = require('path');
 
 // Hiển thị form thêm sản phẩm
 exports.getAddProduct = (req, res) => {
@@ -9,19 +7,21 @@ exports.getAddProduct = (req, res) => {
 
 // Xử lý thêm sản phẩm
 exports.postAddProduct = (req, res) => {
-    const { name, price, description } = req.body;
-    const image = req.file;
+    const { category_id,name_product, description, price ,quantity} = req.body;
+    const image_product = req.file;
 
-    if (!image) {
+    if (!image_product) {
         return res.send('Vui lòng tải lên một hình ảnh.');
     }
 
     // Tạo đối tượng sản phẩm mới
     const newProduct = new Product({
-        name: name,
-        price: price,
+        category_id: category_id,
+        name_product: name_product,
         description: description,
-        imageUrl: '/uploads/' + image.filename // Lưu đường dẫn ảnh
+        price: price,
+        quantity: quantity,
+        image_product: '/uploads/' + image_product.filename // Lưu đường dẫn ảnh
     });
 
     // Lưu sản phẩm vào MongoDB

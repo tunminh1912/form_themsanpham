@@ -5,7 +5,7 @@ async function connect(){
         await mongoose.connect('mongodb://localhost:27017/productsDB')
         console.log('Kết nối MongoDB thành công!');
     } catch (error) {
-        conso.log(error);
+        console.log(error);
     }
 }
 

@@ -9,17 +9,23 @@
 <body>
     <h1>Thêm sản phẩm mới</h1>
     <form action="/products" method="POST" enctype="multipart/form-data">
-        <label for="name">Tên sản phẩm:</label>
-        <input type="text" id="name" name="name" required><br><br>
+        <label for="category_id">Mã kho:</label>
+        <input type="number" id="category_id" name="category_id" required><br><br>
 
-        <label for="price">Giá sản phẩm:</label>
-        <input type="number" id="price" name="price" required><br><br>
+        <label for="name_product">Tên sản phẩm:</label>
+        <input type="text" id="name_product" name="name_product" required><br><br>
 
         <label for="description">Mô tả sản phẩm:</label>
         <textarea id="description" name="description"></textarea><br><br>
 
-        <label for="image">Chọn hình ảnh:</label>
-        <input type="file" id="image" name="image" accept="image/*" required><br><br>
+        <label for="price">Giá sản phẩm:</label>
+        <input type="number" id="price" name="price" required><br><br>
+
+        <label for="quantity">Số lượng:</label>
+        <input type="number" id="quantity" name="quantity" required><br><br>
+
+        <label for="image_product">Chọn hình ảnh:</label>
+        <input type="file" id="image_product" name="image_product" accept="image/*" required><br><br>
 
         <button type="submit">Thêm sản phẩm</button>
     </form>
