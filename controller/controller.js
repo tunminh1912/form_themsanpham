@@ -5,6 +5,15 @@ exports.getAddProduct = (req, res) => {
     res.render('addProduct'); // render view addProduct.ejs
 };
 
+exports.getAllProduct = async (req,res)=>{
+    try {
+        const product = await Product.find();
+        res.status(200).send(product);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+}
+
 // Xử lý thêm sản phẩm
 exports.postAddProduct = (req, res) => {
     const { category_id,name_product, description, price ,quantity} = req.body;

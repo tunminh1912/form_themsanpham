@@ -21,6 +21,7 @@ const upload = multer({ storage: storage });
 
 // Routes cho sản phẩm
 router.get('/add', productController.getAddProduct);
-router.post('/', upload.single('image'), productController.postAddProduct);
+router.get('/getall', productController.getAllProduct);
+router.post('/', upload.single('image_product'), productController.postAddProduct);
 
 module.exports = router;
